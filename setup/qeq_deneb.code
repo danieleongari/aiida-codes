@@ -1,0 +1,8 @@
+qeq
+cloned from https://github.com/danieleongari/egulp.git (17 Oct 2018) 
+False
+(plugin to develop)
+deneb
+/home/ongari/aiida-codes/egulppot_deneb
+#SBATCH --partition=serial
+module load intel

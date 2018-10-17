@@ -1,0 +1,7 @@
+zeopp
+zeo++ 0.3
+False
+zeopp.network
+deneb
+/home/ongari/aiida-codes/network_deneb
+#SBATCH --partition=serial
