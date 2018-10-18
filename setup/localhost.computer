@@ -1,0 +1,10 @@
+localhost
+localhost
+localhost
+True
+local
+direct
+#!/bin/bash
+mpirun -np {tot_num_mpiprocs}
+4
+

@@ -4,3 +4,4 @@ False
 cp2k
 localhost
 /usr/bin/cp2k.popt
+export CP2K_DATA_DIR=/home/daniele/Programs/aiida-database/data/cp2k/data
