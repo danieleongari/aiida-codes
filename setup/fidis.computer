@@ -1,0 +1,9 @@
+fidis
+fidis EPFL computer 
+fidis.epfl.ch
+True
+ssh
+slurm
+#!/bin/bash
+srun -n {tot_num_mpiprocs}
+28
