@@ -1,7 +1,7 @@
 eqeq
 cloned from https://github.com/danieleongari/EQeq.git (17 Oct 2018)
 False
-(plugin to develop)
+qeq
 deneb
 /home/ongari/aiida-codes/eqeq_deneb
-#SBATCH --partition=serial
+

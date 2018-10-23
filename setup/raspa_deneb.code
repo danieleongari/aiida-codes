@@ -4,4 +4,3 @@ False
 raspa
 deneb
 /home/ongari/aiida-codes/raspa_deneb/bin/simulate
-#SBATCH --partition=serial

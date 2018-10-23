@@ -1,0 +1,12 @@
+deneb
+deneb EPFL computer, used just for serial jobs 
+deneb1.epfl.ch
+True
+ssh
+slurm
+#!/bin/bash
+srun -n {tot_num_mpiprocs}
+1
+#SBATCH --partition=serial
+#SBATCH --mem=3GB
+
