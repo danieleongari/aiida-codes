@@ -1,12 +1,11 @@
 deneb
-deneb EPFL computer, used just for serial jobs 
 deneb1.epfl.ch
+Deneb EPFL computer using serial partition 
 True
 ssh
 slurm
 #!/bin/bash
+/scratch/{username}/aiida_run/
 srun -n {tot_num_mpiprocs}
 1
 #SBATCH --partition=serial
-#SBATCH --mem=3GB
-

@@ -1,6 +1,6 @@
-fidis
+fidis-debug
 fidis.epfl.ch
-fidis EPFL computer 
+fidis EPFL computer using debug partition 
 True
 ssh
 slurm
@@ -8,3 +8,4 @@ slurm
 /scratch/{username}/aiida_run/
 srun -n {tot_num_mpiprocs}
 28
+#SBATCH --partition=debug
