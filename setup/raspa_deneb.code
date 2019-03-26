@@ -4,6 +4,6 @@ False
 raspa
 deneb
 /home/ongari/aiida-codes/simulate_deneb
-export RASPADIR=/home/ongari/aiida-database/raspa_deneb
+export RASPA_DIR=/home/ongari/aiida-database/raspa_deneb
 export DYLD_LIBRARY_PATH=/home/ongari/aiida-codes/lib/raspa_deneb
 export LD_LIBRARY_PATH=/home/ongari/aiida-codes/lib/raspa_deneb

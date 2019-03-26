@@ -4,6 +4,6 @@ False
 raspa
 localhost
 /home/daniele/Programs/aiida-codes/simulate_localhost
-export RASPADIR=/home/daniele/Programs/aiida-database/data/raspa
+export RASPA_DIR=/home/daniele/Programs/aiida-database/data/raspa
 export DYLD_LIBRARY_PATH=/home/daniele/Programs/aiida-codes/lib/raspa_localhost
 export LD_LIBRARY_PATH=/home/daniele/Programs/aiida-codes/lib/raspa_localhost
