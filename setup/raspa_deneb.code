@@ -1,6 +1,9 @@
 raspa
-cloned from ssh://raspa2@itsaio.science.uva.nl/~raspa2/RASPA-2.0.git (17 Oct 2018), remember to export RASPADIR=/home/ongari/aiida-codes/raspa_deneb in your .bashrc!
+cloned from ssh://raspa2@itsaio.science.uva.nl/~raspa2/RASPA-2.0.git (17 Oct 2018)
 False
 raspa
 deneb
-/home/ongari/aiida-codes/raspa_deneb/bin/simulate
+/home/ongari/aiida-codes/simulate_deneb
+export RASPADIR=/home/ongari/aiida-database/raspa_deneb
+export DYLD_LIBRARY_PATH=/home/ongari/aiida-codes/lib/raspa_deneb
+export LD_LIBRARY_PATH=/home/ongari/aiida-codes/lib/raspa_deneb
