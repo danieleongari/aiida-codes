@@ -1,0 +1,11 @@
+#To install a new computer, run:
+
+cat {computer}.computer | verdi computer setup 
+
+#To install a new code, run:
+
+cat {code}_{computer}.code | verdi code setup 
+
+NB: check the path of the code, 
+    you can have access to the executable on clusters,
+    but on localhost you need to adapt the path!
