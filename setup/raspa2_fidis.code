@@ -1,0 +1,9 @@
+raspa2
+cloned from https://github.com/iRASPA/RASPA2 (25 May 2019)
+False
+raspa
+fidis
+/home/ongari/aiida-codes/simulate_fidis
+export RASPA_DIR=/home/ongari/aiida-database/data/raspa
+export DYLD_LIBRARY_PATH=/home/ongari/aiida-codes/lib/raspa_fidis
+export LD_LIBRARY_PATH=/home/ongari/aiida-codes/lib/raspa_fidis
