@@ -1,13 +1,22 @@
 # To install a new computer, run:
 
-## setup computer
+## generate ssh keypair 
 
+If you haven't done so already, you need to generate a ssh keypair using `ssh-keygen -t rsa` and `ssh-copy-id username@remote`.
+More detailed instructions are [one the AiiDA documentation](https://aiida-core.readthedocs.io/en/latest/get_started/computers.html).
+
+## setup computer
+```
 cat {computer}.computer | verdi computer setup 
+```
 
 ## configure computer
 
+```
 verdi computer configure {computer}
+```
 
+```
 => username = ongari
 => port = 22
 => look_for_keys = 
@@ -22,14 +31,18 @@ verdi computer configure {computer}
 => gss_host = fidis.epfl.ch
 => load_system_host_keys = True
 => key_policy = AutoAddPolicy
+```
+Note that `key_policy = AutoAddPolicy` is different from the defautl settings!
 
 ## test computer
 
 verdi computer test {computer}
 
-#To install a new code, run:
+# To install a new code, run:
 
+```
 cat {code}_{computer}.code | verdi code setup 
+```
 
 NB: check the path of the code, 
     you can have access to the executable on clusters,
