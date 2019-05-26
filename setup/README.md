@@ -36,7 +36,9 @@ Note that `key_policy = AutoAddPolicy` is different from the defautl settings!
 
 ## test computer
 
+```
 verdi computer test {computer}
+```
 
 # To install a new code, run:
 
