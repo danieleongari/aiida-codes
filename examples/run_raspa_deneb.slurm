@@ -4,7 +4,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=1
 
-#SBATCH --partition=serials
+#SBATCH --partition=serial
 
 export RASPA_DIR=/home/ongari/aiida-database/data/raspa
 export DYLD_LIBRARY_PATH=/home/ongari/aiida-codes/lib/raspa_deneb
