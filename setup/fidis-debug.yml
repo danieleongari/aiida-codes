@@ -1,0 +1,11 @@
+label: "fidis-debug"
+hostname: "fidis.epfl.ch"
+description: fidis EPFL computer using debug partition
+transport: ssh
+scheduler: "slurm"
+work_dir: "/scratch/{username}/aiida_run/"
+shebang: "#!/bin/bash"
+mpirun_command: "mpirun -np {tot_num_mpiprocs}"
+mpiprocs_per_machine: "28"
+prepend_text: "#SBATCH --partition=debug"
+append_text: " "

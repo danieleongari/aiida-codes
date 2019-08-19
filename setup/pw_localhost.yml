@@ -1,0 +1,8 @@
+label: "pw"
+description: "installed with 'sudo apt-get install quantum-espresso'"
+input_plugin: "quantumespresso.pw"
+on_computer: true
+remote_abs_path: "/usr/bin/pw.x"
+computer: "localhost"
+prepend_text: " "
+append_text: " "

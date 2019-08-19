@@ -1,38 +1,39 @@
-# To install a new computer, run:
+# To [install a new computer]:
 
-## generate ssh keypair 
+## generate ssh keypair
 
 If you haven't done so already, you need to generate a ssh keypair using `ssh-keygen -t rsa` and `ssh-copy-id username@remote`.
-More detailed instructions are [one the AiiDA documentation](https://aiida-core.readthedocs.io/en/latest/get_started/computers.html).
+More detailed instructions are [in the AiiDA documentation](https://aiida-core.readthedocs.io/en/latest/get_started/computers.html).
 
 ## setup computer
 ```
-cat {computer}.computer | verdi computer setup 
+verdi computer setup --config {computer}.yml
 ```
 
 ## configure computer
 
 ```
-verdi computer configure {computer}
+verdi computer configure ssh {computer}
 ```
 
 ```
-=> username = ongari
-=> port = 22
-=> look_for_keys = 
-=> key_filename = 
-=> timeout = 60
-=> allow_agent = 
-=> proxy_command = 
-=> compress = True
-=> gss_auth = False
-=> gss_kex = False
-=> gss_deleg_creds = False
-=> gss_host = fidis.epfl.ch
-=> load_system_host_keys = True
-=> key_policy = AutoAddPolicy
+Info: enter "?" for help
+User name [daniele]: ongari
+port Nr [22]:
+Look for keys [False]: False #BUG: also using True asks for it!
+SSH key file []: /home/daniele/.ssh/id_rsa
+Connection timeout in s [60]:
+Allow ssh agent [False]:
+SSH proxy command []:
+Compress file transfers [True]:
+GSS auth [False]:
+GSS kex [False]:
+GSS deleg_creds [False]:
+GSS host [fidis.epfl.ch]:
+Load system host keys [True]:
+Key policy (RejectPolicy, WarningPolicy, AutoAddPolicy) [RejectPolicy]: AutoAddPolicy
+Connection cooldown time (s) [5]:
 ```
-Note that `key_policy = AutoAddPolicy` is different from the defautl settings!
 
 ## test computer
 
@@ -40,12 +41,29 @@ Note that `key_policy = AutoAddPolicy` is different from the defautl settings!
 verdi computer test {computer}
 ```
 
-# To install a new code, run:
+# To [install a new code](https://aiida-core.readthedocs.io/en/latest/get_started/codes.html), run:
 
+## Install the plugin
+Typically you do:
 ```
-cat {code}_{computer}.code | verdi code setup 
+pip install aiida-{code}
+```
+or
+```
+git clone https://github.com/{aiidateam}/aiida-{code}
+cd aiida-{code}
+pip install -e .
+```
+Update your entrypoints and check that the new calculation has been added:
+```
+reentry scan
+verdi plugin list aiida.calculations
 ```
 
-NB: check the path of the code, 
-    you can have access to the executable on clusters,
-    but on localhost you need to adapt the path!
+## Setup the code
+Check the path of the code, you can have access to the executable on clusters, but on localhost you need to adapt the path!
+
+Adapt the yml and then use it:
+```
+verdi code setup --config {computer}_{code}.yml
+```

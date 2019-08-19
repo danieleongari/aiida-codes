@@ -1,0 +1,8 @@
+label: "cp2k-5.1"
+description: "installed with 'sudo apt-get install cp2k'"
+input_plugin: "cp2k"
+on_computer: true
+remote_abs_path: "/usr/bin/cp2k.popt"
+computer: "localhost"
+prepend_text: "export CP2K_DATA_DIR=/home/daniele/Programs/aiida-database/data/cp2k/data"
+append_text: " "
