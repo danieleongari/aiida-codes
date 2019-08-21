@@ -5,7 +5,7 @@ transport: ssh
 scheduler: "slurm"
 work_dir: "/scratch/{username}/aiida_run/"
 shebang: "#!/bin/bash"
-mpirun_command: "mpirun -np {tot_num_mpiprocs}"
+mpirun_command: "srun -n {tot_num_mpiprocs}"
 mpiprocs_per_machine: "28"
 prepend_text: " "
 append_text: " "
