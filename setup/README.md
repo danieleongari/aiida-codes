@@ -1,4 +1,4 @@
-# To [install a new computer]:
+# To [install a new computer](https://aiida-core.readthedocs.io/en/latest/get_started/computers.html):
 
 ## generate ssh keypair
 
