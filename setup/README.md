@@ -7,7 +7,7 @@ More detailed instructions are [in the AiiDA documentation](https://aiida-core.r
 
 ## setup computer
 ```
-verdi computer setup --config {computer}.yml
+verdi computer setup --config computer_{computer}.yml
 ```
 
 ## configure computer
