@@ -1,0 +1,11 @@
+label: "raspa"
+description: "cloned from ssh://raspa2@itsaio.science.uva.nl/~raspa2/RASPA-2.0.git (17 Oct 2018)"
+input_plugin: "raspa"
+on_computer: true
+remote_abs_path: "/home/ongari/aiida-codes/simulate_deneb"
+computer: "localhost"
+prepend_text: |
+  export RASPA_DIR=/home/ongari/aiida-database/data/raspa
+  export DYLD_LIBRARY_PATH=/home/ongari/aiida-codes/lib/raspa_deneb
+  export LD_LIBRARY_PATH=/home/ongari/aiida-codes/lib/raspa_deneb
+append_text: " "

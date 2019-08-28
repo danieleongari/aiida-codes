@@ -2,7 +2,7 @@ label: "ddec"
 description: "precompiled linux/parallel binary from https://sourceforge.net/projects/ddec/files/"
 input_plugin: "ddec"
 on_computer: true
-remote_abs_path: "/home/ongari/aiida-codes/Chargemol_09_26_2017_fidis"
+remote_abs_path: "/home/ongari/aiida-codes/Chargemol_09_26_2017"
 computer: "fidis-debug"
 prepend_text: " "
 append_text: " "
