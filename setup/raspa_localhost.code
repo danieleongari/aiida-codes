@@ -1,9 +1,0 @@
-raspa
-cloned from ssh://raspa2@itsaio.science.uva.nl/~raspa2/RASPA-2.0.git (17 Oct 2018)
-False
-raspa
-localhost
-/home/daniele/Programs/aiida-codes/simulate_localhost
-export RASPA_DIR=/home/daniele/Programs/aiida-database/data/raspa
-export DYLD_LIBRARY_PATH=/home/daniele/Programs/aiida-codes/lib/raspa_localhost
-export LD_LIBRARY_PATH=/home/daniele/Programs/aiida-codes/lib/raspa_localhost
