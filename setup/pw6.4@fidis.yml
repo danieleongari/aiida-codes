@@ -1,0 +1,11 @@
+label: "pw-6.4"
+description: "compiled by SCITAS"
+input_plugin: "quantumespresso.pw"
+on_computer: true
+remote_abs_path: "/ssoft/spack/humagne/v1/opt/spack/linux-rhel7-x86_E5v4_Mellanox/intel-18.0.5/quantum-espresso-6.4-akkvpwv773ye3dvdvwa7kyeiwhjoewtd/bin/pw.x"
+computer: "fidis"
+prepend_text: |
+  source /ssoft/spack/bin/slmodules.sh -r deprecated
+  module load intel intel-mpi intel-mkl
+  module load quantum-espresso/6.4-mpi
+append_text: " "
