@@ -65,5 +65,5 @@ Check the path of the code, you can have access to the executable on clusters, b
 
 Adapt the yml and then use it:
 ```
-verdi code setup --config {computer}@{code}.yml
+verdi code setup --config {code}@{computer}.yml
 ```
