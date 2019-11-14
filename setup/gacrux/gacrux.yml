@@ -1,6 +1,6 @@
 label: "gacrux"
 hostname: "fidis.epfl.ch"
-description: fidis EPFL computer using s6g1 constraint (namely Gacrux)
+description: fidis EPFL computer using s6g1 constraint (Gacrux)
 transport: ssh
 scheduler: "slurm"
 work_dir: "/scratch/{username}/aiida_run/"
