@@ -1,6 +1,17 @@
-# Collection of codes for LSMO
-## to be used for AiiDA-1
+# Codes for the LSMO
 
-Read the description in setup/xxx.code for the origin of each program.
+This repository contains 
 
-*NOTE: the use of ./raspa_deneb is deprecated. I split the libraries in ./lib and the data files in aiida-database/data/raspa/share/raspa*
+ * configurations for AiiDA codes on EPFL supercomputers
+ * binaries of codes for setup on local computers
+
+## Prerequisites
+
+An environemnt, where AiiDA is set up and installed.
+
+## Usage
+
+```
+pip install -r requirements.txt
+./setup.py
+```

@@ -1,0 +1,11 @@
+label: "raspa-256c44e"
+description: "RASPA2 cloned from ssh://raspa2@itsaio.science.uva.nl/~raspa2/RASPA-2.0.git (17 Oct 2018)"
+input_plugin: "raspa"
+on_computer: true
+remote_abs_path: "{{ codes_dir }}/bin/simulate_localhost"
+computer: "localhost"
+prepend_text: |
+  export RASPA_DIR="{{ codes_dir }}/data/raspa"
+  export DYLD_LIBRARY_PATH="{{ codes_dir }}/lib/raspa_localhost"
+  export LD_LIBRARY_PATH="{{ codes_dir }}/lib/raspa_localhost"
+append_text: " "

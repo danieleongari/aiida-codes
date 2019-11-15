@@ -4,5 +4,5 @@ input_plugin: "cp2k"
 on_computer: true
 remote_abs_path: "/usr/bin/cp2k.popt"
 computer: "localhost"
-prepend_text: "export CP2K_DATA_DIR=/Users/leopold/scratch/aiida-codes/data/cp2k/data"
+prepend_text: "export CP2K_DATA_DIR={{ codes_dir }}/data/cp2k/data"
 append_text: " "

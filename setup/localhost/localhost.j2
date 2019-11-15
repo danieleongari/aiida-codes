@@ -3,7 +3,7 @@ hostname: "localhost"
 description: "localhost"
 transport: local
 scheduler: "direct"
-work_dir: "/Users/leopold/Personal/Postdoc-MARVEL/aiida_folders/aiida_rmq/aiida_run"
+work_dir: "{{ work_dir }}"
 shebang: "#!/bin/bash"
 mpirun_command: "mpirun -np {tot_num_mpiprocs}"
 mpiprocs_per_machine: 4

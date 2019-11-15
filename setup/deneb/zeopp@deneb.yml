@@ -1,4 +1,4 @@
-label: "zeopp"
+label: "zeopp-0.3"
 description: "zeo++ 0.3"
 input_plugin: "zeopp.network"
 on_computer: true
