@@ -1,14 +1,9 @@
 #!/usr/bin/env python
-from aiida import orm
-from aiida.manage.tests import test_manager
 from aiida.cmdline.commands import cmd_computer, cmd_code
 import click
 from click.testing import CliRunner
 from glob import glob
 import os
-import ruamel.yaml as yaml
-from jinja2 import Template
-
 from jinja2 import Template
 
 def render(template_file, **kwargs):
@@ -26,21 +21,17 @@ def render(template_file, **kwargs):
     with open(yml_file, 'w') as handle:
         handle.write(yml_content)
 
-#@click.option('--AIIDA_PATH', default=os.getenv('AIIDA_PATH'), help='Number of greetings.')
-#@click.option('--name', prompt='Your name',
-#              help='The person to greet.')
-#@click.option('--name', prompt='Your name',
-#              help='The person to greet.')
 
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))
 
 @click.command()
-@click.option('--computer', type=click.Choice(['localhost', 'fidis', 'fidis-debug', 'gacrux']), prompt="Computer to set up:")
+@click.option('--computer', type=click.Choice(['localhost', 'fidis', 'fidis-debug', 'gacrux', 'deneb']), prompt="Computer to set up:")
 def setup(computer):
     """Set up a given computer & codes ."""
 
     cli_runner = CliRunner()
 
+    # computer setup
     computer_yml = 'setup/{c}/{c}.yml'.format(c=computer)
     print("Setting up {}".format(computer))
 
@@ -54,6 +45,7 @@ def setup(computer):
     print(result)
 
     for code_yml in glob('setup/{c}/*@*'.format(c=computer)):
+        # code setup
         if computer == 'localhost':
             render(code_yml, work_dir=work_dir, codes_dir=codes_dir)
             code_yml = os.path.splitext(code_yml)[0]+'.yml'
