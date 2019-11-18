@@ -1,8 +1,0 @@
-label: "zeopp-0.3"
-description: "zeo++ 0.3"
-input_plugin: "zeopp.network"
-on_computer: true
-remote_abs_path: "/home/ongari/aiida-codes/network"
-computer: "deneb"
-prepend_text: " "
-append_text: " "

@@ -1,9 +1,0 @@
-label: "egulp-fde3935"
-description: "egulp cloned from https://github.com/danieleongari/egulp.git (17 Oct 2018)"
-input_plugin: "qeq.qeq"
-on_computer: true
-remote_abs_path: "/home/ongari/aiida-codes/egulp_deneb"
-computer: "deneb"
-prepend_text: |
-module load intel
-append_text: " "
