@@ -1,0 +1,8 @@
+label: "eqeq-6490320"
+description: "eqeq cloned from cloned from https://github.com/danieleongari/EQeq.git"
+input_plugin: "qeq.eqeq"
+on_computer: true
+remote_abs_path: "/home/ongari/aiida-codes/bin/eqeq_6490320"
+computer: "deneb"
+prepend_text: " "
+append_text: " "
