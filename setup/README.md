@@ -67,3 +67,12 @@ Adapt the yml and then use it:
 ```
 verdi code setup --config {code}@{computer}.yml
 ```
+
+## For maintainers: create export file with codes & computers
+
+Create export file for other group members to import:
+```
+python create_export.py
+```
+
+Note: This uses a temporary AiiDA profile and won't pollute your database.

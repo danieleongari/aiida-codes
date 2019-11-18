@@ -1,5 +1,5 @@
-label: "raspa"
-description: "cloned from ssh://raspa2@itsaio.science.uva.nl/~raspa2/RASPA-2.0.git (17 Oct 2018)"
+label: "raspa-256c44e"
+description: "RASPA2 cloned from ssh://raspa2@itsaio.science.uva.nl/~raspa2/RASPA-2.0.git (17 Oct 2018)"
 input_plugin: "raspa"
 on_computer: true
 remote_abs_path: "/home/ongari/aiida-codes/simulate_deneb"
