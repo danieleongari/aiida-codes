@@ -1,0 +1,6 @@
+chargemol: from https://sourceforge.net/projects/ddec/chargemol_09_26_2017
+cp2k: cp2k/data folder from https://github.com/cp2k/cp2k/tree/163f3ce/data (which is the last commit of /data/ since today 19 Nov 2019) 
+zeopp: radius/mass files, collected by D.Ongari
+eqeq: experimental ionizationdata and covenient chargegencers used for Ongari2018 (10.1021/acs.jctc.8b00669)
+egulp: different set of parameters used for Qeq in Ongari2018 (10.1021/acs.jctc.8b00669)
+raspa: share folder from commit 4467e14 (https://github.com/iRASPA/RASPA2/tree/4467e14)
