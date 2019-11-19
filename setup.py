@@ -25,7 +25,7 @@ def render(template_file, **kwargs):
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))
 
 @click.command()
-@click.option('--computer', type=click.Choice(['localhost', 'fidis', 'fidis-debug', 'gacrux', 'deneb']), prompt="Computer to set up:")
+@click.option('--computer', type=click.Choice(['localhost', 'fidis', 'fidis-debug', 'fidis-s6g1', 'deneb-serial']), prompt="Computer to set up:")
 def setup(computer):
     """Set up a given computer & codes ."""
 
