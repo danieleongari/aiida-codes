@@ -3,7 +3,8 @@
 This repository contains 
 
  * configurations for AiiDA codes on EPFL supercomputers
- * binaries of codes for setup on local computers
+ * binaries of codes for setup on local computers and cluster
+ * data files with input parameters needed by the codes
 
 ## Prerequisites
 
