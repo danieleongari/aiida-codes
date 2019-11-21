@@ -47,8 +47,11 @@ def setup(computer):
     for code_yml in glob('setup/{c}/*@*'.format(c=computer)):
         # code setup
         if computer == 'localhost':
-            render(code_yml, work_dir=work_dir, codes_dir=codes_dir)
-            code_yml = os.path.splitext(code_yml)[0]+'.yml'
+            if code_yml.split(".")[-1] == "j2":
+                render(code_yml, work_dir=work_dir, codes_dir=codes_dir)
+                code_yml = os.path.splitext(code_yml)[0]+'.yml'
+            else:
+                continue # to avoid old yaml
 
         print("Setting up {}".format(code_yml))
         options = ['--config', code_yml]
