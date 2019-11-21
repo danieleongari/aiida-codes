@@ -1,4 +1,4 @@
-label: "gacrux"
+label: "fidis-s6g1"
 hostname: "fidis.epfl.ch"
 description: fidis EPFL computer using s6g1 constraint (Gacrux)
 transport: ssh

@@ -1,4 +1,4 @@
-label: "deneb"
+label: "deneb-serial"
 hostname: "deneb1.epfl.ch"
 description: Deneb EPFL computer using serial partition
 transport: ssh
