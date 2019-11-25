@@ -5,7 +5,7 @@
 #SBATCH --cpus-per-task=1
 
 export RASPA_DIR=/home/ongari/aiida-database/data/raspa
-export DYLD_LIBRARY_PATH=/home/ongari/aiida-codes/lib/raspa_fidis
-export LD_LIBRARY_PATH=/home/ongari/aiida-codes/lib/raspa_fidis
+export DYLD_LIBRARY_PATH=/work/lsmo/aiida-lsmo-codes/lib/raspa_fidis
+export LD_LIBRARY_PATH=/work/lsmo/aiida-lsmo-codes/lib/raspa_fidis
 
-/home/ongari/aiida-codes/simulate_fidis
+/work/lsmo/aiida-lsmo-codes/simulate_fidis

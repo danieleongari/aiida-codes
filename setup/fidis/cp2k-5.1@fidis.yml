@@ -9,5 +9,5 @@ prepend_text: |
   module load intel
   module load intel-mpi intel-mkl
   module load cp2k/5.1-mpi
-  export CP2K_DATA_DIR=/home/ongari/aiida-codes/data/cp2k/data
+  export CP2K_DATA_DIR=/work/lsmo/aiida-lsmo-codes/data/cp2k/data
 append_text: " "

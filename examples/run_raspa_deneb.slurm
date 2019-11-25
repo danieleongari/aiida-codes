@@ -7,7 +7,7 @@
 #SBATCH --partition=serial
 
 export RASPA_DIR=/home/ongari/aiida-database/data/raspa
-export DYLD_LIBRARY_PATH=/home/ongari/aiida-codes/lib/raspa_deneb
-export LD_LIBRARY_PATH=/home/ongari/aiida-codes/lib/raspa_deneb
+export DYLD_LIBRARY_PATH=/work/lsmo/aiida-lsmo-codes/lib/raspa_deneb
+export LD_LIBRARY_PATH=/work/lsmo/aiida-lsmo-codes/lib/raspa_deneb
 
-/home/ongari/aiida-codes/simulate_deneb
+/work/lsmo/aiida-lsmo-codes/simulate_deneb

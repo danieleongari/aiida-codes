@@ -134,7 +134,7 @@ valence_density
 EOF
 
 date_start=$(date +%s)
-/home/ongari/aiida-codes/Chargemol_09_26_2017_fidis
+/work/lsmo/aiida-lsmo-codes/Chargemol_09_26_2017_fidis
 date_end=$(date +%s)
 time_run=$((date_end-date_start))
 echo "Total run time: $time_run seconds"

@@ -24,8 +24,10 @@ def render(template_file, **kwargs):
 
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))
 
+computer_list = ['localhost_macosx15', 'localhost_ubu18', 'fidis', 'fidis-debug', 'fidis-s6g1', 'deneb-serial']
+
 @click.command()
-@click.option('--computer', type=click.Choice(['localhost', 'fidis', 'fidis-debug', 'fidis-s6g1', 'deneb-serial']), prompt="Computer to set up:")
+@click.option('--computer', type=click.Choice(computer_list), prompt="Computer to set up:")
 def setup(computer):
     """Set up a given computer & codes ."""
 
@@ -35,10 +37,12 @@ def setup(computer):
     computer_yml = 'setup/{c}/{c}.yml'.format(c=computer)
     print("Setting up {}".format(computer))
 
-    if computer == 'localhost':
+    if computer[:9] == 'localhost':
+        computer_yml = 'setup/{}/localhost.yml'.format(computer
         work_dir = click.prompt('Work directory: ', default=os.getenv('AIIDA_PATH', '/tmp') + '/aiida_run')
-        codes_dir = click.prompt('Codes directory: ', default=THIS_DIR)
-        render('setup/{c}/{c}.j2'.format(c=computer), work_dir=work_dir)
+        render('setup/{}/localhost.j2'.format(computer), work_dir=work_dir)
+    else:
+        computer_yml = 'setup/{c}/{c}.yml'.format(c=computer)    
 
     options = ['--config', computer_yml]
     result = cli_runner.invoke(cmd_computer.computer_setup, options)
@@ -46,9 +50,9 @@ def setup(computer):
 
     for code_yml in glob('setup/{c}/*@*'.format(c=computer)):
         # code setup
-        if computer == 'localhost':
+        if computer[:9] == 'localhost':
             if code_yml.split(".")[-1] == "j2":
-                render(code_yml, work_dir=work_dir, codes_dir=codes_dir)
+                render(code_yml, work_dir=work_dir, codes_dir=THIS_DIR)
                 code_yml = os.path.splitext(code_yml)[0]+'.yml'
             else:
                 continue # to avoid old yaml
