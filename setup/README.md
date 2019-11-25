@@ -1,76 +1,20 @@
-# To [install a new computer](https://aiida-core.readthedocs.io/en/latest/get_started/computers.html):
+# Setting up AiiDA computers & codes
 
-## generate ssh keypair
+This folder contains a number of [YAML](https://yaml.org/) configuration files in order to set up AiiDA computers and codes,
+which can be used automatically with the top-level `setup.py`.
 
-If you haven't done so already, you need to generate a ssh keypair using `ssh-keygen -t rsa` and `ssh-copy-id username@remote`.
-More detailed instructions are [in the AiiDA documentation](https://aiida-core.readthedocs.io/en/latest/get_started/computers.html).
-
-## setup computer
+Alternatively, you can use them to set up computers one by one:
 ```
-verdi computer setup --config computer_{computer}.yml
-```
-
-## configure computer
-
-```
-verdi computer configure ssh {computer}
+verdi computer setup --config fidis/fidis.yml
+verdi code setup --config cp2k-5.1@fidis.yml
 ```
 
-```
-Info: enter "?" for help
-User name [daniele]: ongari
-port Nr [22]:
-Look for keys [False]: False #BUG: also using True asks for it!
-SSH key file []: /home/daniele/.ssh/id_rsa
-Connection timeout in s [60]:
-Allow ssh agent [False]:
-SSH proxy command []:
-Compress file transfers [True]:
-GSS auth [False]:
-GSS kex [False]:
-GSS deleg_creds [False]:
-GSS host [fidis.epfl.ch]:
-Load system host keys [True]:
-Key policy (RejectPolicy, WarningPolicy, AutoAddPolicy) [RejectPolicy]: AutoAddPolicy
-Connection cooldown time (s) [5]:
-```
-
-## test computer
-
-```
-verdi computer test {computer}
-```
-
-# To [install a new code](https://aiida-core.readthedocs.io/en/latest/get_started/codes.html), run:
-
-## Install the plugin
-Typically you do:
-```
-pip install aiida-{code}
-```
-or
-```
-git clone https://github.com/{aiidateam}/aiida-{code}
-cd aiida-{code}
-pip install -e .
-```
-Update your entrypoints and check that the new calculation has been added:
-```
-reentry scan
-verdi plugin list aiida.calculations
-```
-
-## Setup the code
-Check the path of the code, you can have access to the executable on clusters, but on localhost you need to adapt the path!
-
-Adapt the yml and then use it:
-```
-verdi code setup --config {code}@{computer}.yml
-```
+See also the AiiDA docs on [setting up a new computer](https://aiida-core.readthedocs.io/en/latest/get_started/computers.html)
+and  [setting up a new code](https://aiida-core.readthedocs.io/en/latest/get_started/codes.html).
 
 ## For maintainers: create export file with codes & computers
 
-Create export file for other group members to import:
+Create export file for others members to import:
 ```
 python create_export.py
 ```
