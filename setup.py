@@ -5,6 +5,7 @@ from click.testing import CliRunner
 from glob import glob
 import os
 from jinja2 import Template
+from colorama import Fore, Style
 
 def render(template_file, **kwargs):
     """Produce yaml file from template.
@@ -21,6 +22,11 @@ def render(template_file, **kwargs):
     with open(yml_file, 'w') as handle:
         handle.write(yml_content)
 
+def print_success(result):
+    if not result.exit_code == 0:
+        click.secho(result.output, fg='red')
+    else:
+        click.secho('Sucess', fg='green')
 
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))
 
@@ -46,7 +52,7 @@ def setup(computer):
 
     options = ['--config', computer_yml]
     result = cli_runner.invoke(cmd_computer.computer_setup, options)
-    print(result)
+    print_success(result)
 
     for code_yml in glob('setup/{c}/*@*'.format(c=computer)):
         # code setup
@@ -60,7 +66,8 @@ def setup(computer):
         print("Setting up {}".format(code_yml))
         options = ['--config', code_yml]
         result = cli_runner.invoke(cmd_code.setup_code, options)
-        print(result)
+        print_success(result)
+
 
 if __name__ == '__main__':
     setup()

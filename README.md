@@ -8,7 +8,8 @@ This repository contains
 
 ## Prerequisites
 
-An environemnt, where AiiDA is set up and installed.
+An environment, where AiiDA is set up and installed,
+including plugins for the corresponding codes (e.g. `aiida-cp2k`, `aiida-raspa`, `aiida-ddec`, `aiida-qeq`, `aiida-zeopp`, ...).
 
 ## Usage
 

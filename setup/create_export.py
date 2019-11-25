@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+"""Create AiiDA export file from codes.
+
+This script uses a temporary AiiDA profile to set up a selection of computers and codes
+and export their configuration in an AiiDA export file (e.g. to distribute them via the export file).
+"""
+
 from aiida import orm
 from aiida.manage.tests import test_manager
 from aiida.cmdline.commands import cmd_computer, cmd_code
@@ -37,8 +43,3 @@ with test_manager() as test_mgr:
 
     print("Exporting to {}".format(export_file))
     export_zip(flat_list, outfile=export_file)
-
-#    yield fixture_mgr
-
-#print("Creating profile {}".format(profile))
-#sys.call("verdi quicksetup
