@@ -5,7 +5,6 @@ from click.testing import CliRunner
 from glob import glob
 import os
 from jinja2 import Template
-from colorama import Fore, Style
 
 def render(template_file, **kwargs):
     """Produce yaml file from template.
