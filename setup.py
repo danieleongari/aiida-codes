@@ -44,11 +44,11 @@ def setup(computer):
     print("Setting up {}".format(computer))
 
     if computer[:9] == 'localhost':
-        computer_yml = 'setup/{}/localhost.yml'.format(computer
+        computer_yml = 'setup/{}/localhost.yml'.format(computer)
         work_dir = click.prompt('Work directory: ', default=os.getenv('AIIDA_PATH', '/tmp') + '/aiida_run')
         render('setup/{}/localhost.j2'.format(computer), work_dir=work_dir)
     else:
-        computer_yml = 'setup/{c}/{c}.yml'.format(c=computer)    
+        computer_yml = 'setup/{c}/{c}.yml'.format(c=computer)
 
     options = ['--config', computer_yml]
     result = cli_runner.invoke(cmd_computer.computer_setup, options)
