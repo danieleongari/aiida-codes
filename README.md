@@ -15,5 +15,5 @@ including plugins for the corresponding codes (e.g. `aiida-cp2k`, `aiida-raspa`,
 
 ```
 pip install -r requirements.txt
-./setup.py
+./configure.py
 ```
