@@ -47,7 +47,7 @@ def setup(computer):
         work_dir = click.prompt('Work directory', default=os.getenv('AIIDA_PATH', '/tmp') + '/aiida_run')
         render('setup/{}/localhost.j2'.format(computer), work_dir=work_dir)
     else:
-        username = click.prompt('User name')
+        username = click.prompt('{} user name'.format(computer))
         computer_yml = 'setup/{c}/{c}.yml'.format(c=computer)
 
     options = ['--config', computer_yml]
