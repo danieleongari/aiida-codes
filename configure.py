@@ -32,9 +32,9 @@ THIS_DIR = os.path.dirname(os.path.realpath(__file__))
 computer_list = ['localhost_macosx15', 'localhost_ubu18', 'fidis', 'fidis-debug', 'fidis-s6g1', 'deneb-serial']
 
 @click.command()
-@click.option('--computer', type=click.Choice(computer_list), prompt="Computer to set up:")
+@click.option('--computer', type=click.Choice(computer_list), prompt="Computer to set up")
 def setup(computer):
-    """Set up a given computer & codes ."""
+    """Set up a given computer & codes."""
 
     cli_runner = CliRunner()
 
@@ -44,13 +44,23 @@ def setup(computer):
 
     if computer[:9] == 'localhost':
         computer_yml = 'setup/{}/localhost.yml'.format(computer)
-        work_dir = click.prompt('Work directory: ', default=os.getenv('AIIDA_PATH', '/tmp') + '/aiida_run')
+        work_dir = click.prompt('Work directory', default=os.getenv('AIIDA_PATH', '/tmp') + '/aiida_run')
         render('setup/{}/localhost.j2'.format(computer), work_dir=work_dir)
     else:
+        username = click.prompt('{} user name'.format(computer))
         computer_yml = 'setup/{c}/{c}.yml'.format(c=computer)
 
     options = ['--config', computer_yml]
     result = cli_runner.invoke(cmd_computer.computer_setup, options)
+    print_success(result)
+
+    print("Configuring {}".format(computer))
+
+    if computer[:9] == 'localhost':
+        options = ['local', computer, '--non-interactive']
+    else:
+        options = ['ssh', computer, '--username', username, '--safe-interval', 10, '--look-for-keys', '--key-policy', 'AutoAddPolicy', '--non-interactive']
+    result = cli_runner.invoke(cmd_computer.computer_configure, options)
     print_success(result)
 
     for code_yml in glob('setup/{c}/*@*'.format(c=computer)):
