@@ -48,6 +48,7 @@ def setup(computer):
         render('setup/{}/localhost.j2'.format(computer), work_dir=work_dir)
     else:
         username = click.prompt('{} user name'.format(computer))
+        ssh_key = click.prompt('Path to SSH key', default="{}/.ssh/id_rsa".format(os.path.expanduser("~")))
         computer_yml = 'setup/{c}/{c}.yml'.format(c=computer)
 
     options = ['--config', computer_yml]
@@ -59,7 +60,8 @@ def setup(computer):
     if computer[:9] == 'localhost':
         options = ['local', computer, '--non-interactive']
     else:
-        options = ['ssh', computer, '--username', username, '--safe-interval', 10, '--look-for-keys', '--key-policy', 'AutoAddPolicy', '--non-interactive']
+        options = ['ssh', computer, '--username', username, '--safe-interval', 10, '--look-for-keys',
+                   '--key-policy', 'AutoAddPolicy', '--non-interactive', '--key-filename', ssh_key]
     result = cli_runner.invoke(cmd_computer.computer_configure, options)
     print_success(result)
 
