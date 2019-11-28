@@ -9,6 +9,7 @@
 ##SBATCH --constraint=E5v4
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+AIIDA_CODE_DIR="/work/lsmo/aiida-lsmo-codes"
 
 # Rename your cube file in "valence_density.cube" (this won't work if you have multiple .cube files!)
 if [ ! -f valence_density.cube ]; then
@@ -22,7 +23,7 @@ cat > job_control.txt << EOF
 </net charge>
 
 <charge type>
-DDEC6 
+DDEC6
 </charge type>
 
 <compute BOs>
@@ -36,7 +37,7 @@ DDEC6
 </periodicity along A, B, and C vectors>
 
 <atomic densities directory complete path>
-/home/ongari/aiida-database/data/chargemol_09_26_2017/atomic_densities/
+$AIIDA_CODE_DIR/data/chargemol/atomic_densities/
 </atomic densities directory complete path>
 
 <input filename>
@@ -134,7 +135,7 @@ valence_density
 EOF
 
 date_start=$(date +%s)
-/work/lsmo/aiida-lsmo-codes/Chargemol_09_26_2017_fidis
+$AIIDA_CODE_DIR/bin/chargemol_09_26_2017_ubu18
 date_end=$(date +%s)
 time_run=$((date_end-date_start))
 echo "Total run time: $time_run seconds"
