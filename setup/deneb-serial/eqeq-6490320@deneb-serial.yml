@@ -3,6 +3,6 @@ description: "eqeq cloned from cloned from https://github.com/danieleongari/EQeq
 input_plugin: "qeq.eqeq"
 on_computer: true
 remote_abs_path: "/work/lsmo/aiida-lsmo-codes/bin/eqeq_6490320_ubu18"
-computer: "deneb"
+computer: "deneb-serial"
 prepend_text: " "
 append_text: " "
