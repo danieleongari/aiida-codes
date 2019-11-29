@@ -28,6 +28,7 @@ def print_success(result):
         click.secho('Sucess', fg='green')
 
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))
+SETUP_DIR = os.path.join(THIS_DIR, 'setup')
 
 computer_list = ['localhost_macosx15', 'localhost_ubu18', 'fidis', 'fidis-debug', 'fidis-s6g1', 'deneb-serial']
 
@@ -39,17 +40,17 @@ def setup(computer):
     cli_runner = CliRunner()
 
     # computer setup
-    computer_yml = 'setup/{c}/{c}.yml'.format(c=computer)
+    computer_yml = SETUP_DIR + '/{c}/{c}.yml'.format(c=computer)
     print("Setting up {}".format(computer))
 
     if computer[:9] == 'localhost':
-        computer_yml = 'setup/{}/localhost.yml'.format(computer)
+        computer_yml = SETUP_DIR + '/{}/localhost.yml'.format(computer)
         work_dir = click.prompt('Work directory', default=os.getenv('AIIDA_PATH', '/tmp') + '/aiida_run')
-        render('setup/{}/localhost.j2'.format(computer), work_dir=work_dir)
+        render(SETUP_DIR + '/{}/localhost.j2'.format(computer), work_dir=work_dir)
     else:
         username = click.prompt('{} user name'.format(computer))
         ssh_key = click.prompt('Path to SSH key', default="{}/.ssh/id_rsa".format(os.path.expanduser("~")))
-        computer_yml = 'setup/{c}/{c}.yml'.format(c=computer)
+        computer_yml = SETUP_DIR + '/{c}/{c}.yml'.format(c=computer)
 
     options = ['--config', computer_yml]
     result = cli_runner.invoke(cmd_computer.computer_setup, options)
@@ -65,7 +66,7 @@ def setup(computer):
     result = cli_runner.invoke(cmd_computer.computer_configure, options)
     print_success(result)
 
-    for code_yml in glob('setup/{c}/*@*'.format(c=computer)):
+    for code_yml in glob(SETUP_DIR + '/{c}/*@*'.format(c=computer)):
         # code setup
         if computer[:9] == 'localhost':
             if code_yml.split(".")[-1] == "j2":
