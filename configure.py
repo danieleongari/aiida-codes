@@ -58,7 +58,7 @@ def setup(computer):
     print("Configuring {}".format(computer))
 
     if computer[:9] == 'localhost':
-        options = ['local', 'localhost', '--non-interactive']
+        options = ['local', 'localhost', '--non-interactive', '--safe-interval', 0]
     else:
         options = ['ssh', computer, '--username', username, '--safe-interval', 10, '--look-for-keys',
                    '--key-policy', 'AutoAddPolicy', '--non-interactive', '--key-filename', ssh_key]
