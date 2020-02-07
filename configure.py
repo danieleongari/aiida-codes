@@ -30,10 +30,14 @@ def print_success(result):
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))
 SETUP_DIR = os.path.join(THIS_DIR, 'setup')
 
-computer_list = ['localhost_macosx15', 'localhost_ubu18', 'fidis', 'fidis-debug', 'fidis-s6g1', 'deneb-serial', 'workhorse']
+local_computers =  ['localhost_macosx15', 'localhost_ubu18', 'fidis', 'localhost_workhorse']
+
+remote_computers = ['fidis', 'fidis-debug', 'fidis-s6g1', 'deneb-serial', 'workhorse']
+
+all_computers = local_computers + remote_computers
 
 @click.command()
-@click.option('--computer', type=click.Choice(computer_list), prompt="Computer to set up")
+@click.option('--computer', type=click.Choice(all_computers), prompt="Computer to set up")
 def setup(computer):
     """Set up a given computer & codes."""
 
@@ -43,7 +47,7 @@ def setup(computer):
     computer_yml = SETUP_DIR + '/{c}/{c}.yml'.format(c=computer)
     print("Setting up {}".format(computer))
 
-    if computer[:9] == 'localhost':
+    if computer in local_computers:
         computer_yml = SETUP_DIR + '/{}/localhost.yml'.format(computer)
         work_dir = click.prompt('Work directory', default=os.getenv('AIIDA_PATH', '/tmp') + '/aiida_run')
         render(SETUP_DIR + '/{}/localhost.j2'.format(computer), work_dir=work_dir)
@@ -58,7 +62,7 @@ def setup(computer):
 
     print("Configuring {}".format(computer))
 
-    if computer[:9] == 'localhost':
+    if computer in local_computers:
         options = ['local', 'localhost', '--non-interactive', '--safe-interval', 0]
     else:
         options = ['ssh', computer, '--username', username, '--safe-interval', 10, '--look-for-keys',

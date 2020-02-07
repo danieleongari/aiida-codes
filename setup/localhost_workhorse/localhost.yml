@@ -1,0 +1,11 @@
+label: "localhost"
+hostname: "localhost"
+description: Workhorse server for nanoporous pipeline
+transport: local
+scheduler: "slurm"
+work_dir: "/tmp/aiida_run"
+shebang: "#!/bin/bash"
+mpirun_command: "mpirun -n {tot_num_mpiprocs}"
+mpiprocs_per_machine: "4"
+prepend_text: " "
+append_text: " "
