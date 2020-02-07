@@ -30,7 +30,7 @@ def print_success(result):
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))
 SETUP_DIR = os.path.join(THIS_DIR, 'setup')
 
-computer_list = ['localhost_macosx15', 'localhost_ubu18', 'fidis', 'fidis-debug', 'fidis-s6g1', 'deneb-serial']
+computer_list = ['localhost_macosx15', 'localhost_ubu18', 'fidis', 'fidis-debug', 'fidis-s6g1', 'deneb-serial', 'workhorse']
 
 @click.command()
 @click.option('--computer', type=click.Choice(computer_list), prompt="Computer to set up")
