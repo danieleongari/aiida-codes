@@ -30,7 +30,7 @@ def print_success(result):
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))
 SETUP_DIR = os.path.join(THIS_DIR, 'setup')
 
-local_computers =  ['localhost_macosx15', 'localhost_ubu18', 'fidis', 'localhost_workhorse']
+local_computers =  ['localhost_macosx15', 'localhost_ubu18', 'localhost_workhorse']
 
 remote_computers = ['fidis', 'fidis-debug', 'fidis-s6g1', 'deneb-serial', 'workhorse', 'daint-mc']
 
