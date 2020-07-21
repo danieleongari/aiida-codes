@@ -1,0 +1,11 @@
+label: "helvetios"
+hostname: "helvetios.epfl.ch"
+description: helvetios EPFL computer, see https://www.epfl.ch/research/facilities/scitas/hardware/helvetios/
+transport: ssh
+scheduler: "slurm"
+work_dir: "/scratch/{username}/aiida_run/"
+shebang: "#!/bin/bash"
+mpirun_command: "srun -n {tot_num_mpiprocs}"
+mpiprocs_per_machine: "36"
+prepend_text: " "
+append_text: " "
