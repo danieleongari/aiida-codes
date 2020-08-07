@@ -30,9 +30,13 @@ def print_success(result):
 THIS_DIR = os.path.dirname(os.path.realpath(__file__))
 SETUP_DIR = os.path.join(THIS_DIR, 'setup')
 
-local_computers =  ['localhost_macosx15', 'localhost_ubu18', 'localhost_workhorse']
-
-remote_computers = ['fidis', 'fidis-debug', 'fidis-s6g1', 'deneb-serial', 'workhorse', 'daint-mc']
+all_computers = [ os.path.basename(x) for x in glob(os.path.join(SETUP_DIR,"*")) if os.path.isdir(x) ]
+local_computers, remote_computers = [], []
+for computer in all_computers:
+    if "local" in local_computers:
+        local_computers.append(computer)
+    else:
+        remote_computers.append(computer)
 
 all_computers = local_computers + remote_computers
 
