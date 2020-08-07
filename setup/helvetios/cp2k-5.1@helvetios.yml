@@ -2,7 +2,7 @@ label: "cp2k-5.1"
 description: "CP2K 5.1 compiled by SCITAS"
 input_plugin: "cp2k"
 on_computer: true
-remote_abs_path: "/ssoft/spack/paien/v3/opt/spack/linux-rhel7-x86_S6g1_Mellanox/intel-18.0.2/cp2k-5.1-iccge4rphxghkg2c7eidyv7gual4ifhg/bin/cp2k.popt"
+remote_abs_path: "/ssoft/spack/cornalin/v2/opt/spack/linux-rhel7-x86_E5v4_Mellanox/intel-17.0.2/cp2k-5.1-gke4ujsx5qhx6zt7ncfo22hajqhp6n6b/bin/cp2k.popt"
 computer: "helvetios"
 prepend_text: |
   source /ssoft/spack/bin/slmodules.sh -r deprecated
