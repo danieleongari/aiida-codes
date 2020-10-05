@@ -33,7 +33,7 @@ SETUP_DIR = os.path.join(THIS_DIR, 'setup')
 all_computers = [ os.path.basename(x) for x in glob(os.path.join(SETUP_DIR,"*")) if os.path.isdir(x) ]
 local_computers, remote_computers = [], []
 for computer in all_computers:
-    if "local" in local_computers:
+    if "local" in computer:
         local_computers.append(computer)
     else:
         remote_computers.append(computer)
